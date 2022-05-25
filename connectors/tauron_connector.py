@@ -28,13 +28,13 @@ conn_string = CONNECTION_STRING
 db = create_engine(conn_string)
 conn = db.connect()
 
-energy.to_sql('data', con=conn, if_exists='replace', index=True, method='multi')
+energy.to_sql('tauron', con=conn, if_exists='replace', index=True, method='multi')
 
 conn = psycopg2.connect(conn_string)
 conn.autocommit = True
 cursor = conn.cursor()
 
-sql1 = '''select * from data;'''
+sql1 = '''select * from tauron;'''
 cursor.execute(sql1)
 for i in cursor.fetchall():
         print(i)
