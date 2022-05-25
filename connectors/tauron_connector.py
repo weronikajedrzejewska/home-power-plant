@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from credentials.config import USERNAME, TAURON_PASSWORD, METER_ID, CONNECTION_STRING
 
 TODAY = datetime.date.today()
-LAST_30_DAYS = datetime.timedelta(days=30)
+LAST_30_DAYS = datetime.date.today() - datetime.timedelta(days=30)
 
 username = USERNAME
 password = TAURON_PASSWORD
